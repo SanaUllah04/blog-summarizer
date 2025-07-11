@@ -7,17 +7,29 @@ export default function HomePage() {
   return (
     <main className="dark bg-gray-800 relative overflow-hidden h-screen">
       <header className="h-24 sm:h-32 flex items-center z-30 w-full">
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="mt-30 container mx-auto px-6 flex items-center justify-between">
           <div className="uppercase text-white font-black text-3xl">
-            BlogSnap
-          </div> 
+            Blog <br />
+            <div className='text-7xl'>
+             Snap
+             </div>
+          </div>
         </div>
       </header>
+
+
+       <div className="container mx-auto px-6 flex relative py-16">
+        <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
+          <span className="w-50 h-2 bg-white mb-12"></span>
+        </div>
+      </div>
+
+      
       
       <div className="bg-gray-800 flex relative z-20 items-center overflow-hidden">
-        <div className="container mx-auto px-6 flex relative py-16">
+        <div className="container mx-auto px-6 flex relative">
           <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
-            <span className="w-20 h-2 bg-white mb-12"></span>
+            
             <h1 className="font-bebas-neue uppercase text-6xl sm:text-7xl font-black flex flex-col leading-none text-white">
               Read Less, 
               <span className="text-5xl sm:text-6xl">

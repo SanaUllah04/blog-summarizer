@@ -7,12 +7,21 @@ export default function URLPage() {
   return (
     <main className="dark bg-gray-800 relative overflow-hidden h-screen">
       <header className="h-24 sm:h-32 flex items-center z-30 w-full">
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="mt-30 container mx-auto px-6 flex items-center justify-between">
           <div className="uppercase text-white font-black text-3xl">
-            BlogSnap
+            Blog <br />
+            <div className='text-7xl'>
+             Snap
+             </div>
           </div>
         </div>
       </header>
+
+      <div className="container mx-auto px-6 flex relative py-16">
+        <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
+          <span className="w-50 h-2 bg-white mb-12"></span>
+        </div>
+      </div>
 
       <main id="content" role="main" className="w-full max-w-md mx-auto p-6">
         <div className="mt-7 bg-white rounded-xl shadow-lg dark:bg-gray-800 dark:border-gray-700 border-2 border-indigo-300">
