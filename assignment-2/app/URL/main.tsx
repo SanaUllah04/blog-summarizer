@@ -19,42 +19,37 @@ export default function URLPage() {
   const [retrieving, setRetrieving] = useState(false)
 
   const retrieveLatestSummary = async (retryCount = 0): Promise<Summary | null> => {
-    const maxRetries = 10 // Maximum number of retries
-    const retryDelay = 15000 // 15 seconds between retries
-    
-    try {
-      // Get the latest summary from Supabase
-      const response = await fetch('/api/get-latest-summary', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: url }),
-      })
-      
-      if (!response.ok) {
-        throw new Error(`Failed to fetch summary: ${response.status}`)
-      }
-      
-      const data = await response.json()
-      
-      if (data.summary) {
-        return data.summary
-      } else if (retryCount < maxRetries) {
-        // If no summary found, wait and retry
-        console.log(`Summary not ready yet, retrying in ${retryDelay/1000} seconds... (${retryCount + 1}/${maxRetries})`)
-        await new Promise(resolve => setTimeout(resolve, retryDelay))
-        return retrieveLatestSummary(retryCount + 1)
-      } else {
-        throw new Error('Summary not found after maximum retries')
-      }
-    } catch (error) {
-      if (retryCount < maxRetries) {
-        console.log(`Error retrieving summary, retrying... (${retryCount + 1}/${maxRetries})`)
-        await new Promise(resolve => setTimeout(resolve, retryDelay))
-        return retrieveLatestSummary(retryCount + 1)
-      }
-      throw error
+  const maxRetries = 10
+  const retryDelay = 15000
+
+  try {
+    const response = await fetch('/api/get-latest-summary') // ✅ GET request with no body
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch summary: ${response.status}`)
     }
+
+    const data = await response.json()
+
+    if (data.summary) {
+      return data.summary
+    } else if (retryCount < maxRetries) {
+      console.log(`Summary not ready yet, retrying in ${retryDelay / 1000} seconds... (${retryCount + 1}/${maxRetries})`)
+      await new Promise(resolve => setTimeout(resolve, retryDelay))
+      return retrieveLatestSummary(retryCount + 1)
+    } else {
+      throw new Error('Summary not found after maximum retries')
+    }
+  } catch (error) {
+    if (retryCount < maxRetries) {
+      console.log(`Error retrieving summary, retrying... (${retryCount + 1}/${maxRetries})`)
+      await new Promise(resolve => setTimeout(resolve, retryDelay))
+      return retrieveLatestSummary(retryCount + 1)
+    }
+    throw error
   }
+}
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -198,9 +193,6 @@ export default function URLPage() {
                         </p>
                       </div>
                     </div>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-                      Generated: {new Date(summary.created_at).toLocaleString()}
-                    </p>
                   </div>
                 </div>
               )}
