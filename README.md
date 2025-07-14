@@ -1,6 +1,8 @@
 # Blog Summarizer
 ![Main Page](/assignment-2/public/ProjectImages/MainPage.PNG)
 
+## Demo Video
+[▶ Watch Demo](/assignment-2/public/ProjectImages/Demo%20Video.mp4)
 
 ## Overview
 **Blog Summarizer** is a web application that allows users to submit a blog URL and receive a concise summary of its content. The project leverages **Next.js** for the frontend and integrates with **n8n** for workflow automation by scraping, extracting, summerizing & converting to URDU Language. N8N is also responsible for storing the complete content in the **MongoDB database** & only the URDU summary in **SupaBase**. Summaries are retrieved from a backend API after the n8n workflow processes the submitted URL and are showen to the user.
