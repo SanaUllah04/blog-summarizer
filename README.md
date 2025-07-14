@@ -55,34 +55,25 @@ assignment-2/
 - n8n handles scraping the blog, generating the summary, converting to Urdu language & stored in the MongoDB & Supabase Databases, which is then made available via the backend API.
 
 ## Usage Steps
-1. Clone the repository and install dependencies.
-2. Start the Next.js development server or Open using the Deployed [Link](https://example.com).
+### 1. Clone the repository and install dependencies.
+### 2. Start the Next.js development server or Open using the Deployed [Link](https://example.com).
 
-3. Enter a blog URL in the web interface.
-```
+### 3. Enter a blog URL in the web interface.
 ![URL Page](/assignment-2/public/ProjectImages/URLPage.PNG)
-```
 
-4. **Execute Workflow** in the n8n & wait for content extraction, summary generation & Urdu translation. Content is stored in the MongoDB & Summary in SupaBase
-```
+### 4. **Execute Workflow** in the n8n & wait for content extraction,  summary generation & Urdu translation. Content is stored in the MongoDB & Summary in SupaBase
 ![N8N](/assignment-2/public/ProjectImages/n8n.PNG)
-```
 
-5. Complete Content View in MongoDB
-```
+
+### 5. Complete Content View in MongoDB
 ![MongoDB](/assignment-2/public/ProjectImages/MongoDB.PNG)
-```
 
-6. Summary Stored in SupaBase
-```
+### 6. Summary Stored in SupaBase
 ![SupaBase](/assignment-2/public/ProjectImages/SupaBase.PNG)
-```
 
-
-7. Your Result
-```
+### 7. Your Result
 ![Result](/assignment-2/public/ProjectImages/Result.PNG)
-```
+
 
 ## Notes
 - The summary generation may take a few minutes depending on the n8n workflow timing.
