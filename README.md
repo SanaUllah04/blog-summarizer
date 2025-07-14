@@ -56,7 +56,7 @@ assignment-2/
 
 ## Usage Steps
 ### 1. Clone the repository and install dependencies.
-### 2. Start the Next.js development server or Open using the Deployed [Link](https://example.com).
+### 2. Start the Next.js development server or Open using the Deployed [Link](https://blog-summarizer-ten.vercel.app).
 
 ### 3. Enter a blog URL in the web interface.
 ![URL Page](/assignment-2/public/ProjectImages/URLPage.PNG)
